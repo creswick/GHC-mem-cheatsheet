@@ -7,6 +7,16 @@
 \usepackage{color,graphicx,overpic}
 \usepackage{hyperref}
 
+% Define a TODO command
+\usepackage{ifthen}
+\usepackage{color}
+
+\definecolor{Orange}{rgb}{1,0.5,0}
+\newcommand{\todo}[1][0]{%
+\textsf{\textbf{\textcolor{Orange}{%
+[[TODO\ifthenelse{\equal{#1}{0}}{}{: #1}]]}}}%
+}
+
 
 \pdfinfo{
   /Title (GHC Memory Profiling Cheat Sheat)
@@ -98,7 +108,10 @@ Rebuild with profiling enabled:
 \verb|$ ./my-binary <params> +RTS -p -RTS|
 
 \section{RTS Options}
-
+\verb|$ ./my-binary <params> +RTS -hc -RTS|
+Generates a \verb|my-binary.hp| file, to use this, run hp2ps on it:
+\verb|$ hp2ps -c my-binary.hp|
+Then look at my-binary.ps.
 
 \section{Heap Profiles}
 

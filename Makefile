@@ -67,7 +67,7 @@ bibliographies: ${MAIN}.bib all.aux
 pdf: ${MAIN}.pdf
 	cp ${MAIN}.pdf ghc-mem-cheatsheet.pdf
 
-${MAIN}.pdf : ${SOURCES} ${PDFFIGURES} ${SVGFIGURES} ${MAIN}.bib bibliographies
+${MAIN}.pdf : ${SOURCES} ${PDFFIGURES} ${SVGFIGURES}
 	pdflatex ${MAIN}
 	pdflatex ${MAIN}
 	@while ( grep "Rerun to get cross-references" 	\
