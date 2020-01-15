@@ -105,7 +105,7 @@ Rebuild with profiling enabled:
 \verb+$ cabal install --enable-library-profiling --enable-executable-profiling+
 
 \subsection{Run with +RTS -RTS}
-\verb|$ ./my-binary <params> +RTS -p -RTS|
+\verb|$ ./my-binary <params> +RTS -p -pomyProfile -RTS|
 
 \section{RTS Options}
 \verb|$ ./my-binary <params> +RTS -hc -RTS|
@@ -114,6 +114,7 @@ Generates a \verb|my-binary.hp| file, to use this, run hp2ps on it:
 Then look at my-binary.ps.
 \verb|-hc| Cost-center allocations.
 \verb|-hy| Per-type allocations.
+\verb|-po<name>| change the prefix of the output filenames
 \section{Heap Profiles}
 
 \end{multicols}
